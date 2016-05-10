@@ -7,11 +7,43 @@
       </a>
     </h2>
   </header>
+
+    {{#if image}}
+    <div class="post-thumbnail" id="{{url}}-post-thumbnail">
+      <script type="text/javascript">
+      var mq = window.matchMedia( "(min-width: 500px)" );
+      if (mq.matches){
+        var thumbnailContainer = document.getElementById('{{url}}-post-thumbnail')
+
+        if (!String.prototype.contains) {
+          String.prototype.contains = function(s) {
+            return this.indexOf(s) > -1;
+          }
+        }
+
+        function homepagePostThumbnail (imgUrl) {
+            {{! Firesize has folded ... still looking for an alternative. }}
+            // if (!imgUrl.contains("http://") && !imgUrl.contains("https://")) {
+            //   fireSizeUrl = "http://firesize.com/x150/g_center/{{@blog.url}}";
+            // } else {
+            //   fireSizeUrl = "http://firesize.com/x150/g_center/";
+            // }
+            thumbnailContainer.innerHTML = '<img src="'+imgUrl+'" style="max-height: 160px;" alt="{{title}}" />';
+        };
+        homepagePostThumbnail("{{image}}");
+      } //end mediaquery if
+      </script>
+
+    </div>
+    {{/if}}
   <section itemprop="description" class="post-item-excerpt">
-    <p>{{excerpt words="35"}}&hellip;</p>
+    <p>{{excerpt characters="80"}}<span style="color:#ccc;">…</span><a class="read-more" href="{{url}}"> <span>&raquo;</span></p>
   </section>
   <footer class="post-item-footer">
     <ul class="post-item-meta-list">
+      <li class="post-item-meta-item">
+	    By {{author}}
+      </li>
       <li class="post-item-meta-item">
         <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
           {{date published_at timeago="true"}}
