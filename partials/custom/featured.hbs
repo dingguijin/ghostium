@@ -24,9 +24,13 @@
 
 
 <script>
-console.log("statistics run....")
+function statistics_all_users() {
 jQuery.get("https://www.ppmessage.com/home/statistics").success(function(data) {
   console.log(data);                                                                               
   jQuery("#statistics_all_users").text(data);                                                 
 });
+}
+
+statistics_all_users();
+setInterval(statistics_all_users, 5000);
 </script>
