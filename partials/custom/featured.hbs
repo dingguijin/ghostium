@@ -12,6 +12,7 @@
 <script>
 console.log("statistics run....")
 jQuery.get("https://www.ppmessage.com/home/statistics").success(function(data) {
+  console.log(data);                                                                               
   jQuery("#statistics_all_users").text(data);                                                 
 });
 </script>
