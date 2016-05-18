@@ -8,7 +8,7 @@
 
     <section class="post-list">
       {{#foreach posts}}
-        {{^if featured}}
+        {{#if featured}}
           {{> post/list this}}
         {{/if}}
       {{/foreach}}
