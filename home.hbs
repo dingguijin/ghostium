@@ -7,11 +7,11 @@
     {{> custom/featured this}}
 
     <section class="post-list">
-      {{#foreach posts}}
-        {{#if featured}}
+      {{#get "posts" featured="true" as |featured|}}
+        {{#foreach featured}}
           {{> post/list this}}
-        {{/if}}
-      {{/foreach}}
+        {{/foreach}}
+      {{/get}}
     </section>
 
   </div>
