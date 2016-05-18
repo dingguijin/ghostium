@@ -7,6 +7,15 @@
       </a>
     </h4>
   </header>
+  <section class="post-excerpt">
+    <p>{{excerpt characters="64"}} <a class="read-more" href="{{url}}">&raquo;</a></p>
+  </section>
+  <footer class="post-meta">
+   {{#if author.image}}<img class="author-thumb" src="{{author.image}}" alt="Author image" nopin="nopin" />{{/if}}
+   {{author}}
+   {{tags prefix=" on "}}
+   <time class="post-date" datetime="{{date format='YYYY-MM-DD'}}">{{date format="DD MMMM YYYY"}}</time>
+  </footer>
   <footer class="post-item-footer">
     <ul class="post-item-meta-list">
       <li class="post-item-meta-item">
