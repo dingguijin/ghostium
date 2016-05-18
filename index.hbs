@@ -8,7 +8,17 @@
 
     <section class="post-list">
       {{#foreach posts}}
-        {{> post/list this}}
+        {{#if featured}}
+          {{> post/list this}}
+        {{/if}}
+      {{/foreach}}
+    </section>
+
+    <section class="post-list">
+      {{#foreach posts}}
+        {{^if featured}}
+          {{> post/blist this}}
+        {{/if}}
       {{/foreach}}
     </section>
 
