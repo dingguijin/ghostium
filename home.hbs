@@ -1,5 +1,18 @@
-{{#get "posts" filter="featured:true" limit="all" as |featured|}}
-  {{#foreach featured}}
-    {{> post/list this}}
-  {{/foreach}}
-{{/get}}
+{{!< default}}
+
+{{> cover this}}
+
+<section class="wrapper" tabindex="0">
+  <div class="wrapper-container">
+    {{> custom/featured this}}
+
+    <section class="post-list">
+      {{#foreach posts}}
+        {{if featured}}
+          {{> post/list this}}
+        {{/if}}
+      {{/foreach}}
+    </section>
+
+  </div>
+</section>
