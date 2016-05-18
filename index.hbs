@@ -6,12 +6,11 @@
   <div class="wrapper-container">
     {{> custom/featured this}}
 
+   {{"#posts"}}
     <section class="post-list">
-      {{#get "posts" filter="featured:false" limit="all" as |unfeatured|}}
-        {{#foreach unfeatured}}
+        {{#foreach posts}}
           {{> post/blist this}}
         {{/foreach}}
-      {{/get}}
     </section>
 
     {{#if pagination}}
