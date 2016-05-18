@@ -7,11 +7,11 @@
     {{> custom/featured this}}
 
     <section class="post-list">
-      {{#foreach posts}}
-        {{^if featured}}
+      {{#get "posts" filter="featured:false" limit="all" as |unfeatured|}}
+        {{#foreach unfeatured}}
           {{> post/blist this}}
-        {{/if}}
-      {{/foreach}}
+        {{/foreach}}
+      {{/get}}
     </section>
 
     {{#if pagination}}
