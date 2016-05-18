@@ -14,6 +14,19 @@
       {{/get}}
     </section>
 
+   {{"#posts"}}
+    <section class="post-list">
+        {{#foreach posts}}
+          {{^if featured}}
+            {{> post/blist this}}
+          {{/if}}
+        {{/foreach}}
+    </section>
+
+    {{#if pagination}}
+      {{pagination}}
+    {{/if}}
+
     {{> footer this}}
   </div>
 </section>
