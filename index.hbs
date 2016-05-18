@@ -9,9 +9,7 @@
    {{"#posts"}}
     <section class="post-list">
         {{#foreach posts}}
-          {{^if featured}}
-            {{> post/blist this}}
-          {{/if}}
+          {{> post/blist this}}
         {{/foreach}}
     </section>
 

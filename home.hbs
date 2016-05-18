@@ -16,11 +16,9 @@
 
    {{"#posts"}}
     <section class="post-list">
-        {{#foreach posts}}
-          {{^if featured}}
-            {{> post/blist this}}
-          {{/if}}
-        {{/foreach}}
+      {{#foreach posts}}
+        {{> post/blist this}}
+      {{/foreach}}
     </section>
 
     {{#if pagination}}
