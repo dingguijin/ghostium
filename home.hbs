@@ -7,7 +7,7 @@
     {{> custom/featured this}}
 
     <section class="post-list">
-      {{#get "posts" filter="featured:true" limit="all" as |featured|}}
+      {{#get "posts" filter="featured:true" limit="all" include="author" as |featured|}}
         {{#foreach featured}}
           {{> post/list this}}
         {{/foreach}}
