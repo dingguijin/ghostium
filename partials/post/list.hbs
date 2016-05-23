@@ -46,19 +46,6 @@
 	    By {{author}}
       </li>
       <li class="post-item-meta-item">
-        <time datetime="{{date published_at format="YYYY-MM-DD"}}" itemprop="datePublished">
-          {{date published_at timeago="true"}}
-        </time>
-      </li>
-      {{#if tags}}
-        <li class="post-item-meta-item">
-          {{#foreach tags}}
-            <a itemprop="{{#if @first}}articleSection{{else}}keywords{{/if}}" href="{{url}}" data-pjax>{{name}}</a>
-            {{~#if @last}} {{else}}, {{/if}}
-          {{/foreach}}
-        </li>
-      {{/if}}
-      <li class="post-item-meta-item">
         <a href="{{url}}#disqus_thread" data-pjax data-disqus-identifier="{{id}}">Comments</a>
       </li>
     </ul>
